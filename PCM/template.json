@@ -1,0 +1,51 @@
+{
+  "template": "CNBC VideoDetail",
+  "layout": [
+    {
+      "editable": false,
+      "columns": [
+        {
+          "span": 8,
+          "editable": false,
+          "modules": [
+            {
+              "name": "videoDetailClipPlayer",
+              "canChangeLayout": false,
+              "canChangeSource": false,
+              "source": "self"
+            }
+          ]
+        },
+        {
+          "span": 4,
+          "editable": false,
+          "modules": [
+            {
+              "name": "relatedVideos",
+              "canChangeLayout": false,
+              "canChangeSource": false,
+              "source": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "editable": false,
+      "columns": [
+        {
+          "span": 8,
+          "editable": false,
+          "modules": [
+            {
+              "name": "CNBCVideoFeed60",
+              "source": "15839263",
+              "canChangeLayout": false,
+              "canChangeSource": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
