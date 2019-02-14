@@ -9,7 +9,8 @@ const buildModuleMap = (pcmPath) => {
   moduleConfig
     .forEach((mod) => {
       if (mod.modulePointer) {
-        moduleMap[mod] = mod.modulePointer;
+
+        moduleMap[mod.module] = mod.modulePointer;
       }
     });
 

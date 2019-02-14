@@ -1,6 +1,4 @@
-const moduleMap = require('./buildModuleMap');
-
-const templateObjToDeps = (template) => {
+const templateObjToDeps = (template, moduleMap) => {
   const depSet = new Set();
   template.layout.forEach((layout) => {
     layout.columns.forEach((column) => {

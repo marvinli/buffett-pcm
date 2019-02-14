@@ -1,8 +1,10 @@
 const buildTemplateMap = require('../PCM/buildTemplateMap');
 const templateObjToDeps = require('../PCM/templateObjToDeps');
+const buildModuleMap = require('../PCM/buildModuleMap');
 
 const buffetReport = (pcmPath) => {
   const templateMap = buildTemplateMap(pcmPath);
+  const moduleMap = buildModuleMap(pcmPath);
   const templates = Object.keys(templateMap);
 
   const buffetPages = new Set([
@@ -21,12 +23,12 @@ const buffetReport = (pcmPath) => {
 
   const buffetModules = templates
     .filter((template) => buffetPages.has(template))
-    .map((template) => templateObjToDeps(templateMap[template]))
+    .map((template) => templateObjToDeps(templateMap[template], moduleMap))
     .reduce(reducer, new Set());
 
   const nonBuffetModules = templates
     .filter((template) => !buffetPages.has(template))
-    .map((template) => templateObjToDeps(templateMap[template]))
+    .map((template) => templateObjToDeps(templateMap[template], moduleMap))
     .reduce(reducer, new Set());
 
   const buffetModulesArray = Array.from(buffetModules);
